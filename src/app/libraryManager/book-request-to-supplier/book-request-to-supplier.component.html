@@ -1,0 +1,30 @@
+<h1>Request to Supplier</h1>
+<hr>
+<div class="container">
+    <form #f= "ngForm">
+        <div class="form-group">
+            <label for="title">Book Title</label>
+            <input type="text" class="form-control" id="title" name="title" placeholder="Enter Book Title" [(ngModel)]= "bookRequest.title">
+        </div>
+        <div class="form-group">
+            <label for="author">Author</label>
+            <input type="text" class="form-control" id="author" name="author" placeholder="Enter Author's Name" [(ngModel)]= "bookRequest.author">
+        </div>
+        <div class="form-group">
+            <label for="supplier">Choose Supplier</label>
+            <select class="form-control" name="supplier" id="supplier"  [(ngModel)]="bookRequest.supplierID" required>
+            <option *ngFor="let supplier of suppliers " value = {{supplier.personID}} >{{supplier.firstName}}   {{supplier.lastName}}</option>
+            </select>
+        </div>
+        <br>
+        <input class="btn btn-lg active" type="button" name="register" value="Request Supply" (click)="supply(f)">
+
+        <input type="button" routerLink="/Manager" value="Back">    
+
+        {{message}}
+<hr>
+    </form>
+   
+</div>
+
+

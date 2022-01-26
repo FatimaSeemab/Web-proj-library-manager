@@ -1,0 +1,24 @@
+<div id="Print">
+    <h1>Book Supply Requests</h1>
+    <hr>
+    <div>  <h4>Name:</h4><h6> {{supplier.firstName}} {{supplier.lastName}}</h6></div>
+    <div><h4>Title:</h4><h6> Book Supplier</h6></div>
+    <div><h4>Email:</h4><h6> {{supplier.email}}</h6></div>
+    <hr>
+    <table id="content" border='1' width='100%' style='border-collapse: collapse;'>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let request of requests" align="center">
+          <td>{{ request.title }}</td>
+          <td>{{ request.author }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <button printSectionId="Print" styleSheetFile="assets/pdf.css" ngxPrint>Print</button>
+  <input type="button" value="LogOut" (click)="logOut()">

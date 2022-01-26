@@ -1,0 +1,43 @@
+<h1>Library Manager View</h1>
+<hr>
+<ul>
+    <li>
+        <label> Add a book in catalog </label>
+        <input type="button" style="float: right" routerLink="/addBook" value="Add" />
+    </li>
+    <br />
+    <li>
+        <label> View Books Catalog </label>
+        <input type="button" style="float: right" routerLink="/viewBooks" value="view books" />
+    </li>
+    <br />
+    <li>
+        <label> See the request for issue books </label>
+        <input type="button" style="float: right" routerLink="/SeeRequest" value="view requests" />
+    </li>
+    <br />
+    <li>
+        <label> Made the request to supplier </label>
+        <input type="button" style="float: right" routerLink="/SupplierRequest" value="Request Supply" />
+    </li>
+    <br />
+    <li>
+        <label> Register a User </label>
+        <input type="button" style="float: right" name="register" routerLink="/register" value="Register" />
+    </li>
+    <br />
+    <li>
+
+        <label for="title">Return a book</label>
+        <div>
+            <input style="width:70% ;display: inline;" type="number" class="form-control" id="id" name="id"
+                placeholder="Enter Book Id" [(ngModel)]="id" />
+            <input style="display: inline;" type="button" style="float: right" value="Return" (click)="delete(id)" />
+        </div>
+        {{ message }}
+    </li>
+
+    <hr />
+
+    <input type="button" value="LogOut" (click)="logOut()" />
+</ul>

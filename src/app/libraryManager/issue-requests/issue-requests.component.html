@@ -1,0 +1,29 @@
+<h1>Issue Requests</h1>
+
+<div>
+  <table id="content" border="1" width="100%" style="border-collapse: collapse">
+    <thead>
+      <tr>
+        <th>Book ID</th>
+        <th>Person ID</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let request of requests" align="center">
+        <td>{{ request.bookID }}</td>
+        <td>{{ request.personID }}</td>
+        <td>
+          |
+          <input
+            type="button"
+            value="Issue"
+            (click)="issue(request.bookID, request.personID)"
+          />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <hr />
+  <input type="button" routerLink="/Manager" value="Back" />
+</div>

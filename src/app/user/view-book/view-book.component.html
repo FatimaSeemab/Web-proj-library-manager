@@ -1,0 +1,21 @@
+<h1> Book </h1>
+<div>
+    <div class="holder photo rounded">
+   
+        <div>
+            <h4>Title:</h4><h6> {{book.title}}</h6>
+            <h4>Author:</h4><h6> {{book.author}}</h6>
+            <h4>Isbn:</h4><h6> {{book.isbn}}</h6>
+            <h4>Description:</h4><h6> {{book.description}}</h6>
+            <h4>Language:</h4><h6> {{book.language}}</h6>
+            <h4>Number of Pages:</h4><h6> {{book.pages}}</h6>
+            <br>
+            <ng-template [ngIf]="title"> 
+                <input  type="button" value="Request Issuance" (click)="issue()">
+            </ng-template> 
+            <input type="button" routerLink="/viewBooks" value="Back" >
+        </div>
+        <img class="img-fluid" src="{{'http://localhost:80/library/image/' + book.image}}" />
+    </div>
+    {{message}}
+</div>

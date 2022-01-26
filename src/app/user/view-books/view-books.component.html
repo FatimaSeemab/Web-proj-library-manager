@@ -1,0 +1,22 @@
+<h1> Books </h1>
+<div>
+<input type="button" value="LogOut"  (click)="logOut()">
+</div>
+<hr>
+<div>
+    <div class="holder photo rounded" *ngFor="let book of books | async">
+        <div>
+            <h4>Title:</h4><h6> {{book.title}}</h6>
+            <h4>Author:</h4><h6> {{book.author}}</h6>
+            <br>
+            <input type="button" routerLink="/viewBook" (click)='setBook(book)' value="view details" >
+        
+        </div>
+        <img  class="img-fluid" src="{{'http://localhost:80/library/image/' + book.image}}" />
+    </div>
+   <hr>
+   <ng-template [ngIf]="!title">
+    <input  type="button" routerLink="/Manager" value="Back" >
+   </ng-template>
+</div>
+
