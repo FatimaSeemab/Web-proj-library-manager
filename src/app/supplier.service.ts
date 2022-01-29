@@ -11,14 +11,14 @@ export class SupplierService {
 
   constructor(private httpClient:HttpClient) { }
   getSupplier(): Observable<User[]>{
-    return this.httpClient.get<User[]>('http://localhost:80/Library/viewSupplier.php');
+    return this.httpClient.get<User[]>('http://library-project.epizy.com/Library/viewSupplier.php');
   }
   supplyBook(supply: Supply): Observable<Supply>{
-    return this.httpClient.post<Supply>('http://localhost:80/library/supplyRequest.php',supply);
+    return this.httpClient.post<Supply>('http://library-project.epizy.com/Library/supplyRequest.php',supply);
   }
   displayrequest(id:Number): Observable<Supply[]>{
     console.log(id);
-    return this.httpClient.get<Supply[]>('http://localhost:80/library/displayRequest.php?id='.concat(id.toString()));
+    return this.httpClient.get<Supply[]>('http://library-project.epizy.com/Library/displayRequest.php?id='.concat(id.toString()));
   
   }
 }

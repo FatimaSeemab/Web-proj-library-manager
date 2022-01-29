@@ -32,6 +32,6 @@ export class ManagerViewComponent implements OnInit {
   logOut() {
     alert('You are logging out!!');
     sessionStorage.clear();
-    this.router.navigateByUrl('/login');
+    this.router.navigateByUrl('');
   }
 }

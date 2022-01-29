@@ -22,22 +22,22 @@ export class BooksService {
   }
 
   viewBooks(): Observable<Book[]>{
-    return this.httpClient.get<Book[]>('http://localhost:80/library/viewBooks.php');
+    return this.httpClient.get<Book[]>('http://library-project.epizy.com/Library/viewBooks.php');
   }
 
   issueBook(issue: Issue): Observable<Issue>{
-    return this.httpClient.post<Issue>('http://localhost:80/Library/Issued.php', issue);
+    return this.httpClient.post<Issue>('http://library-project.epizy.com/Library/Issued.php', issue);
   }
   
   getissueRequest(): Observable<Issue[]>
-  { return this.httpClient.get<Issue[]>('http://localhost:80/library/issuerequests.php');}
+  { return this.httpClient.get<Issue[]>('http://library-project.epizy.com/Library/issuerequests.php');}
 
   issue_now(issue: Issue){
-    return this.httpClient.post<Issue>('http://localhost:80/library/issueParticular.php/',issue);   
+    return this.httpClient.post<Issue>('http://library-project.epizy.com/Library/issueParticular.php/',issue);   
   }
 
   checkin(id: number){
     console.log(id);
-    return this.httpClient.delete<Issue>('http://localhost:80/library/checkedIn.php/?id='.concat(id.toString()));
+    return this.httpClient.delete<Issue>('http://library-project.epizy.com/Library/checkedIn.php/?id='.concat(id.toString()));
   }
 }

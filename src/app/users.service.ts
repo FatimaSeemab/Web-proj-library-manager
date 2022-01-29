@@ -11,12 +11,12 @@ export class UsersService {
   constructor(private httpClient: HttpClient) { }
 
   loginUser(user: User): Observable<User>{
-    return this.httpClient.post<User>('http://localhost:8080/library/login.php', user);
+    return this.httpClient.post<User>('http://library-project.epizy.com/Library/login.php', user);
   }
 
 
   registerUser(user: User): Observable<User>{
-    return this.httpClient.post<User>('http://localhost:8080/library/register.php', user);
+    return this.httpClient.post<User>('http://library-project.epizy.com/Library/login.php', user);
   }
   
 }

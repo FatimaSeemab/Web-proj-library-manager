@@ -19,7 +19,7 @@ const routes: Routes = [
 {path:'SeeRequest', component:IssueRequestsComponent},
 {path:'Manager', component:ManagerViewComponent},
 {path:'Supplier',component:SupplierviewComponent},
-{path:"login", component:LoginComponent}];
+{path:'', component:LoginComponent}];
 // {path:"**", component:LoginComponent}
 
 @NgModule({
